@@ -16,7 +16,7 @@ while (keepOnRunning) {
 }
 ```
 
-The `input` method is responsible of handling user input (key strokes, mouse movements, etc.). The `update` method is responsible of updating game state (enemy positions, AI, etc..) and, finally, theSo, is that all? Are we finished with game loops? Well, not yet. The above snippet has many pitfalls. First of all the speed that the game loop runs at will be different depending on the machine it runs on. If the machine is fast enough the user will not even be able to see what is happening in the game. Moreover, that game loop will consume all the machine resources.
+The `input` method is responsible for handling user input (key strokes, mouse movements, etc.). The `update` method is responsible for updating game state (enemy positions, AI, etc..) and, finally, the `render` method is responsible for drawing the scene and clearing it after. So, is that all? Are we finished with game loops? Well, not yet. The above snippet has many pitfalls. First of all the speed that the game loop runs at will be different depending on the machine it runs on. If the machine is fast enough the user will not even be able to see what is happening in the game. Moreover, that game loop will consume all the machine resources.
 
 First of all we may want to control separately the period at which the game state is updated and the period at which the game is rendered to the screen. Why do we do this? Well, updating our game state at a constant rate is more important, especially if we use some physics engine. On the contrary, if our rendering is not done in time it makes no sense to render old frames while processing our game loop. We have the flexibility to skip some frames. 
 
